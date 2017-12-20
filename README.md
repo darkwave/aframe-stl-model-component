@@ -1,0 +1,1 @@
+# aframe-stl-model-component

@@ -51,13 +51,15 @@ AFRAME.registerComponent('stl-model', {
       //   });
       // }
 
+      if (material) {
+        model = new THREE.Mesh( geometry , material.material);
+      } else {
+        model = new THREE.Mesh( geometry, new THREE.MeshStandardMaterial());
+      }
 
-         model = new THREE.Mesh( geometry , material.material);
-
-         //this.model = model;
-         el.setObject3D('mesh', model);
-         el.emit('model-loaded', {format: 'stl', model: model});
-      }, function(progress) {}, function(err) {console.log(err)});
+      el.setObject3D('mesh', model);
+      el.emit('model-loaded', {format: 'stl', model: model});
+    }, function(progress) {}, function(err) {console.log(err)});
   },
 
   /**

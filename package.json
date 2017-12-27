@@ -29,7 +29,7 @@
     "stl-model"
   ],
   "author": "Massimo Avvisati <massimo.avvisati@codemotion.it>",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/darkwave/aframe-stl-model-component/issues"
   },

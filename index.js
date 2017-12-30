@@ -11,7 +11,7 @@ if (typeof AFRAME === 'undefined') {
  */
 AFRAME.registerComponent('stl-model', {
   schema: {
-    src:         { type: 'model' }
+    src:         { type: 'asset' }
   },
 
   /**
@@ -85,5 +85,20 @@ AFRAME.registerComponent('stl-model', {
    * Called when entity resumes.
    * Use to continue or add any dynamic or background behavior such as events.
    */
-  play: function () { }
+  play: function () { },
+
+  /**
+   * Write cached attribute data to the entity DOM element.
+   *
+   * @param {boolean} isDefault - Whether component is a default component. Always flush for
+   *   default components.
+   */
+  flushToDOM: function (isDefault) {
+    return;
+    // var attrValue = isDefault ? this.data : this.attrValue;
+    // if (!attrValue) { return; }
+    // //console.log('src', this.data.src)
+    // window.HTMLElement.prototype.setAttribute.call(this.el, this.attrName, '#model');
+
+  },
 });

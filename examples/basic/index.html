@@ -6,11 +6,14 @@
     <meta name="description" content="Basic example for Stl Model component."></meta>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="../../dist/aframe-stl-model-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-    <a-scene environment="preset: forest">
-      <a-entity stl-model="src: ../assets/house.stl" scale="0.01 0.01 0.01" rotation="-90 0 0" position="0 0 -6" material="color: #f0f; roughness: 1; metalness: 0"></a-entity>
+
+    <a-scene stats>
+      <a-assets>
+        <a-asset-item response-type="arraybuffer" id="house" src="../assets/house.stl"></a-asset-item>
+      </a-assets>
+      <a-entity stl-model="src: #house" scale="0.01 0.01 0.01" rotation="-90 0 0" position="0 0 -6" material="color: #f0f; roughness: 1; metalness: 0"></a-entity>
     </a-scene>
 
     <!-- GitHub Corner. -->

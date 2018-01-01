@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>aframe-stl-model-component loading and displaying stl model using javascript</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="../../dist/aframe-stl-model-component.min.js"></script>
+
+  </head>
+  <body>
+    <a-scene>
+      <a-assets></a-assets>
+    </a-scene>
+  </body>
+  <script>
+    var scene = document.querySelector('a-scene');
+    var assets = document.querySelector('a-assets');
+    var asset = document.createElement('a-asset-item');
+    asset.setAttribute('src', '../assets/house.stl');
+    asset.setAttribute('id', 'secondhouse');
+    asset.setAttribute('response-type', "arraybuffer")
+    assets.appendChild(asset)
+    var e = document.createElement('a-entity')
+    e.setAttribute('position', '0 0 -6');
+    e.setAttribute('scale', '.02 .02 .02');
+    e.setAttribute('rotation', '-90 0 0')
+    e.setAttribute('stl-model', 'src: #secondhouse')
+    scene.appendChild(e)
+  </script>
+</html>
